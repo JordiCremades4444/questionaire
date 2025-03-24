@@ -1,0 +1,22 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+      - id: trailing-whitespace
+        stages: [pre-commit, pre-push]
+      - id: end-of-file-fixer
+        stages: [pre-commit, pre-push]
+      - id: check-yaml
+        stages: [pre-commit, pre-push]
+
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+      - id: black
+        stages: [pre-commit, pre-push]
+
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.9.3
+    hooks:
+      - id: isort
+        stages: [pre-commit, pre-push]
