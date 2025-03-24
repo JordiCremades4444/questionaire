@@ -15,7 +15,9 @@ def ask_questions(folder_path, num_questions):
     selected_images = random.choices(images, k=num_questions)
 
     for i, image in enumerate(selected_images, start=1):
-        question = f"({i}/{num_questions}) Q: {os.path.splitext(image)[0]}"
+        question = (
+            f"[{len(images)}] ({i}/{num_questions}) Q: {os.path.splitext(image)[0]}"
+        )
         print(question)
         input("Press Enter to see the answer...")
         img_path = os.path.join(folder_path, image)
