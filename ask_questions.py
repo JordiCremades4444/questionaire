@@ -12,7 +12,12 @@ def load_config():
 
 def ask_questions(folder_path, num_questions):
     images = [img for img in os.listdir(folder_path) if img.endswith(".png")]
-    selected_images = random.choices(images, k=num_questions)
+    num_questions = min(
+        num_questions, len(images)
+    )  # Ensure we don't exceed the number of images
+    selected_images = random.sample(
+        images, k=num_questions
+    )  # Randomly select without repetition
 
     for i, image in enumerate(selected_images, start=1):
         question = (
